@@ -43,4 +43,9 @@ async function deleteSuperHero(nombreSuperHeroe) {
     const result = await SuperHero.deleteOne({nombreSuperHeroe:nombreSuperHeroe});
     console.log('Super heroe eleminado:',result);
 }
-deleteSuperHero('Deadpool')
+deleteSuperHero('Deadpool');
+async function findSuperHeroes() {
+    const heroes = await SuperHero.find({planetaOrigen:'Tierra'});
+    console.log('Superheroes encontrado :',heroes);
+}
+findSuperHeroes();
