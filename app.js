@@ -15,3 +15,19 @@ const superheroSchema = new mongoose.Schema({
     creador:String
 },{collection:'Grupo-13'});
 const SuperHero = mongoose.model('SuperHero',superheroSchema);
+async function insertSuperHero() {
+    const hero = new SuperHero({
+        nombreSuperHeroe:'Deadpool',
+        nombreReal:'Wade Wilson',
+        edad:'43',
+        planetaOrigen:'Tierra',
+        debilidad:'Ninguna (cáncer curado)',
+        poderes:['Regeneración', 'Habilidades de combate','Ruptura de la cuarta pared'],
+        aliados:['Cable','X-Force'],
+        enemigos:['Francis','Ajax'],
+        creador:'Tapia Lautaro'
+    });
+    await hero.save();
+    console.log('Superheroe insertado:',hero);
+}
+insertSuperHero();
