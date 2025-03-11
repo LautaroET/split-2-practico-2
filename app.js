@@ -31,3 +31,11 @@ async function insertSuperHero() {
     console.log('Superheroe insertado:',hero);
 }
 insertSuperHero();
+async function updateSuperHero(nombreSuperHeroe) {
+    const result = await SuperHero.updateOne(
+        { nombreSuperHeroe: nombreSuperHeroe},
+        { $set: { edad: 26 } } 
+    );
+    console.log('Resultado de la actualizacion:',result);
+}
+updateSuperHero('Wolverine');
