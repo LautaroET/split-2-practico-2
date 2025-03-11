@@ -38,4 +38,9 @@ async function updateSuperHero(nombreSuperHeroe) {
     );
     console.log('Resultado de la actualizacion:',result);
 }
-updateSuperHero('Wolverine');
+updateSuperHero('Deadpool');
+async function deleteSuperHero(nombreSuperHeroe) {
+    const result = await SuperHero.deleteOne({nombreSuperHeroe:nombreSuperHeroe});
+    console.log('Super heroe eleminado:',result);
+}
+deleteSuperHero('Deadpool')
